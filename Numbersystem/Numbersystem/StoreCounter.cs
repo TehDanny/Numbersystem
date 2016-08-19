@@ -8,7 +8,25 @@ namespace Numbersystem
 {
     class StoreCounter
     {
-        public int CounterNumber { get; set; } // 3 counters in the store
+        private int number;
+        public int Number
+        {
+            get { return number; }
+            set { number = value; }
+        }
+        private Customer currentCustomer;
 
+        public Customer CurrentCustomer
+        {
+            get { return currentCustomer; }
+            set { currentCustomer = value; }
+        }
+        public bool Available { get; set; }
+        public static int NextCustomerNumber = 1;
+
+        public StoreCounter()
+        {
+            this.Available = true;
+        }
     }
 }
